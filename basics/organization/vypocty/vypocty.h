@@ -1,0 +1,1 @@
+double vypocet(double vstup);
