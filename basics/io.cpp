@@ -5,14 +5,15 @@ using namespace std;
 int main() {
    string jmeno, nalada;
 
-   cout << "POCITAC: Ahoj, jak Ti rikaji?\nTY: ";
-   cin >> jmeno;
+   cout << "POČÍTAČ: Ahoj, jak Ti říkají?\nTY: ";
+   getline(cin, jmeno);
+   // https://stackoverflow.com/a/7787253/12118546
 
-   cout << "POCITAC: Tesi me, " << jmeno << "! Jak se mas?\nTY: ";
-   cin >> nalada;
+   cout << "POČÍTAČ: Těší mě, " << jmeno << "! Jak se máš?\nTY: ";
+   getline(cin, nalada);
 
-   cout << "POCITAC: To me tesi, ze se mas " << nalada << "! "
-       << "Musim jit, " << jmeno << "... Mej se!\n";
+   cout << "POČÍTAČ: To mě těší, že se máš " << nalada << "! "
+        << "Musím jít, " << jmeno << "... Měj se!\n";
 
    return 0;
 }
