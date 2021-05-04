@@ -1,19 +1,16 @@
 #include <iostream>
 
-using namespace std;
-
 int main() {
-   string jmeno, nalada;
+   std::string jmeno, nalada;
 
-   cout << "POČÍTAČ: Ahoj, jak Ti říkají?\nTY: ";
-   getline(cin, jmeno);
-   // https://stackoverflow.com/a/7787253/12118546
+   std::cout << "POČÍTAČ: Ahoj, jak Ti říkají?\nTY: ";
+   std::cin >> jmeno;
 
-   cout << "POČÍTAČ: Těší mě, " << jmeno << "! Jak se máš?\nTY: ";
-   getline(cin, nalada);
+   std::cout << "POČÍTAČ: Těší mě, " << jmeno << "! Jak se máš?\nTY: ";
+   std::cin >> nalada;
 
-   cout << "POČÍTAČ: To mě těší, že se máš " << nalada << "! "
-        << "Musím jít, " << jmeno << "... Měj se!\n";
+   std::cout << "POČÍTAČ: To mě těší, že se máš " << nalada << "! "
+             << "Musím jít, " << jmeno << "... Měj se!\n";
 
    return 0;
 }
