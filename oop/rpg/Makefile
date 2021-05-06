@@ -1,7 +1,19 @@
+PROGRAM = rpg.out
+
+SOURCES = $(wildcard *.cpp)
+OBJS = $(addsuffix .o, $(basename $(SOURCES)))
+
 %.o:%.cpp
 	g++ -c $< -o $@
 
-all:
-	g++ main.cpp Player.cpp npc.cpp random.c -o rpg
-
 $(PROGRAM):$(OBJS)
+	g++ $(OBJS) -o $(PROGRAM)
+
+all: $(PROGRAM)
+
+clean:
+	rm -f *.o rpg.out
+
+test:
+	echo $(SOURCES)
+	echo ${OBJS}

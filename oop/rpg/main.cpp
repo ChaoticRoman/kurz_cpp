@@ -9,7 +9,7 @@ int main()
     Player p("Killer");
     NPC g("Random guard");
 
-    srand (time(NULL));
+    srand(time(NULL));
     int i = rand(0, 1);
     while (p.health() > 0 && g.health() > 0)
     {
