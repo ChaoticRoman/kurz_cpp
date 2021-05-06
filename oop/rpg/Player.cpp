@@ -6,7 +6,7 @@
 
 Player::Player(string name) : name_ { name }
 {
-    strength_ = 13;
+    strength_ = 60;
     std::cout << "Player " << name_ << " was constructed.\n";
 }
 

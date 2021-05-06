@@ -11,8 +11,9 @@ public:
     ~Player();
 
 public: // getters
-    string name() { return name_; };
-    int health() { return health_; };
+    string name() { return name_; }
+    int health() { return health_; }
+    bool alive() { return health_ > 0; }
 
 public: // actions
     int attack();
