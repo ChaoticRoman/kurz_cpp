@@ -35,7 +35,14 @@ std::string Player::salutation() const
 
 void Player::setHealth(int newHealth)
 {
+    if (health_ == 0) {
+        return;
+    }
     health_ = newHealth < 0 ? 0 : newHealth;
+    if (health_ == 0)
+    {
+        alivePlayers--;
+    }
 }
 
 int Player::health() const {
