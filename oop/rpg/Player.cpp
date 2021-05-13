@@ -17,8 +17,7 @@ Player::Player(string name):
 
 Player::~Player()
 {
-    health_ = 0;
-    --alivePlayers;
+    setHealth(0);
     cout << name_ << " is leaving..." << endl;
 }
 

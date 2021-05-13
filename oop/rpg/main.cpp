@@ -5,19 +5,17 @@
 
 using namespace std;
 
-int main() {
+void game() {
+    Player p1("Emil");
+    Player p2("Kamil");
+    Player p3("Pepa");
+    p2.setHealth(0);
+    p3.setHealth(0);
     Player::printGameInfo();
+}
 
-    Player p("Emil");
-    {
-        Player p2("Kamil");
-        Player p3("Emil2");
-        p2.setHealth(0);
-        p3.setHealth(0);
-    }
-    p.printPlayerInfo();
-
-    p.printGameInfo();
-
+int main() {
+    game();
+    Player::printGameInfo();
     return 0;
 }
