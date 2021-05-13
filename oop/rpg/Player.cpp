@@ -1,30 +1,60 @@
 #include "Player.h"
 
-#include "random.h"
-
 #include <iostream>
 
-Player::Player(string name) : name_ { name }
+using namespace std;
+
+int Player::alivePlayers = 0;
+int Player::createdPlayers = 0;
+
+Player::Player(string name):
+    name_ { name }, health_ { 100 }
 {
-    strength_ = 60;
-    std::cout << "Player " << name_ << " was constructed.\n";
+    cout << name_ << " has been born!" << endl;
+    ++createdPlayers;
+    ++alivePlayers;
 }
 
 Player::~Player()
 {
-    std::cout << "Player " << name_ << " is leaving scene.\n";
+    health_ = 0;
+    --alivePlayers;
+    cout << name_ << " is leaving..." << endl;
 }
 
-int Player::attack()
+std::string Player::salutation() const
 {
-    int damage = strength_ + rand(-strength_/2, strength_/2);
-    std::cout << "Player " << name_ << " deals " << damage << " damage.\n";
-    return damage;
+    string result = "";
+
+    result += !alive() ? "Dead " : "";
+
+    result += name_;
+
+    return result;
 }
 
-void Player::takeDamage(int damage)
+void Player::setHealth(int newHealth)
 {
-    health_ -= damage;
-    std::cout << "Player " << name_ << " takes " << damage << " damage, "
-              << health_ << " health reamins.\n";
+    health_ = newHealth < 0 ? 0 : newHealth;
+}
+
+int Player::health() const {
+    return health_;
+}
+
+bool Player::alive() const {
+    return health_ > 0;
+}
+
+void Player::printGameInfo()
+{
+    cout << alivePlayers << " alive, "
+         << createdPlayers << " created during the game"
+         << endl;
+}
+
+void Player::printPlayerInfo()
+{
+    cout << salutation() << " has " << health()
+         << "HP." << endl;
 }

@@ -1,26 +1,33 @@
-#pragma once
+#ifndef PLAYER_H
+#define PLAYER_H
 
 #include <string>
 
-using namespace std;
+class Player {
 
-class Player
-{
 public:
-    Player(string name);
+    Player(std::string name);
     ~Player();
 
-public: // getters
-    string name() { return name_; }
-    int health() { return health_; }
-    bool alive() { return health_ > 0; }
+public: // name related stuff
+    std::string salutation() const;
 
-public: // actions
-    int attack();
-    void takeDamage(int damage);
+public: // health related stuff
+    int health() const;
+    void setHealth(int newHealth);
+    bool alive() const;
 
-protected:
-    string name_;
-    int health_ = 100;
-    int strength_;
+public: // info utils
+    static void printGameInfo();
+    void printPlayerInfo();
+
+private:
+    std::string name_ = "anonymous";
+    int health_;
+
+private:
+    static int alivePlayers;
+    static int createdPlayers;
 };
+
+#endif

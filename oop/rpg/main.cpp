@@ -1,31 +1,21 @@
 #include "Player.h"
-#include "npc.h"
-#include "random.h"
+#include "Arena.h"
 
 #include <iostream>
 
-int main()
-{
-    Player p("Killer");
-    NPC g("Random guard");
+using namespace std;
 
-    srand(time(NULL));
-    int i = rand(0, 1);
-    while (p.health() > 0 && g.health() > 0)
-    {
-        if (i % 2)
-        {
-            p.takeDamage(g.attack());
-        }
-        else
-        {
-            g.takeDamage(p.attack());
-        }
-        ++i;
-    }
+int main() {
+    Player::printGameInfo();
 
-    std::cout << p.name() << ": " << (p.alive() ? "LIVES!" : "DIED!") << "\n";
-    std::cout << g.name() << ": " << (g.alive() ? "LIVES!" : "DIED!") << "\n";
+    Player p("Emil");
+    p.printPlayerInfo();
+
+    p.setHealth(50);
+    p.printPlayerInfo();
+
+    p.setHealth(0);
+    p.printGameInfo();
 
     return 0;
 }
