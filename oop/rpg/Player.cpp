@@ -7,6 +7,8 @@ using namespace std;
 int Player::alivePlayers = 0;
 int Player::createdPlayers = 0;
 
+Player::Player(): Player("anonymous guard") {}
+
 Player::Player(string name):
     name_ { name }, health_ { 100 }
 {
@@ -59,8 +61,20 @@ void Player::printGameInfo()
          << endl;
 }
 
-void Player::printPlayerInfo()
+void Player::printGameInfo(int seq)
+{
+    cout << "[" << seq << "]" << " ";
+    Player::printGameInfo();
+}
+
+void Player::printPlayerInfo() const
 {
     cout << salutation() << " has " << health()
          << "HP." << endl;
+}
+
+void Player::printPlayerInfo(int seq) const
+{
+    cout << "[" << seq << "]" << " ";
+    Player::printPlayerInfo();
 }

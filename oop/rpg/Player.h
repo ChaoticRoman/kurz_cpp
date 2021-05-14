@@ -6,10 +6,12 @@
 class Player {
 
 public:
+    Player();
     Player(std::string name);
     ~Player();
 
 public: // name related stuff
+    std::string name() const;
     std::string salutation() const;
 
 public: // health related stuff
@@ -19,10 +21,12 @@ public: // health related stuff
 
 public: // info utils
     static void printGameInfo();
-    void printPlayerInfo();
+    static void printGameInfo(int seq);
+    void printPlayerInfo() const;
+    void printPlayerInfo(int seq) const;
 
-private:
-    std::string name_ = "anonymous";
+protected:
+    std::string name_;
     int health_;
 
 private:
