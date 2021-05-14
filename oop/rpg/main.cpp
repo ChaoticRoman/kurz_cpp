@@ -7,6 +7,21 @@
 
 using namespace std;
 
+
+template<class T>
+bool is(shared_ptr<Player> p)
+{
+    return static_cast<bool>(dynamic_pointer_cast<T>(p));
+}
+
+
+template<class T>
+shared_ptr<T> castTo(shared_ptr<Player> p)
+{
+    return dynamic_pointer_cast<T>(p);
+}
+
+
 void game() {
     //Player::printGameInfo(1);
 
@@ -18,11 +33,10 @@ void game() {
     {
         player->printPlayerInfo();
 
-        auto mage = dynamic_pointer_cast<Mage>(player);
         cout << player->name() << " is "
-             << (mage ? "" : "not ") << ("a mage.") << endl;
+             << (is<Mage>(player) ? "" : "not ") << ("a mage.") << endl;
 
-        if (mage) mage->castMagic();
+        if (is<Mage>(player)) castTo<Mage>(player)->castMagic();
     }
 
     for (const auto &player: players)
@@ -30,7 +44,7 @@ void game() {
         player->printPlayerInfo();
     }
 
-    //Player::printGameInfo(2);
+    Player::printGameInfo(2);
 }
 
 int main() {
