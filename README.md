@@ -10,6 +10,4 @@ Dvoudenní kurz objektově orientovaného programování v C++ pro Engeto s.r.o.
 * [Základní pojmy a první začátky](basics)
 * [Objektově orientované programování (OOP)](oop)
 * [Funkcionální programování](functional)
-* [STL](stl)
 * [wxWidgets](wxWidgets)
-* [Praktický příklad: Zombie Apokalypsa v ČR](zombies)
