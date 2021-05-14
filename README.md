@@ -2,7 +2,8 @@
 
 Dvoudenní kurz objektově orientovaného programování v C++ pro Engeto s.r.o.
 
-[Prezentace](kurz-cpp.pdf)
+[Prezentace](kurz-cpp.pdf)  
+[Prazentace profesionálové](kurz-cpp-pros.pdf)
 
 ## Praktické příklady
 
