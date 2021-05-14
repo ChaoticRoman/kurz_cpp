@@ -7,7 +7,9 @@ using namespace std;
 int Player::alivePlayers = 0;
 int Player::createdPlayers = 0;
 
-Player::Player(): Player("anonymous guard") {}
+
+Player::Player(): Player("Anonymous guard") {}
+
 
 Player::Player(string name):
     name_ { name }, health_ { 100 }
@@ -17,11 +19,23 @@ Player::Player(string name):
     ++alivePlayers;
 }
 
+
+Player::Player(const Player &p):
+    name_ { "Clone of " + p.name_ }, health_ { p.health_ }
+{
+    cout << name_ << " has been cloned!" << endl;
+    ++createdPlayers;
+    ++alivePlayers;
+}
+
 Player::~Player()
 {
     setHealth(0);
     cout << name_ << " is leaving..." << endl;
 }
+
+std::string Player::name() const { return name_; };
+
 
 std::string Player::salutation() const
 {

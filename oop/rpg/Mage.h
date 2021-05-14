@@ -1,15 +1,18 @@
+#pragma once
+
 #include "Player.h"
 
-#include <iostream>
 #include <string>
+
 
 class Mage : public Player
 {
 public:
-    Mage(std::string name): Player(name) {}
+    Mage();
+    Mage(std::string name);
+    ~Mage();
 
-    void castMagic() {
-        health_ *= 2;
-        std::cout << "****" << std::endl;
-    }
+    void castMagic();
+
+    std::string salutation() const;
 };

@@ -8,11 +8,19 @@ class Player {
 public:
     Player();
     Player(std::string name);
-    ~Player();
+
+    Player(const Player &p);
+    Player& operator=(const Player &p) = delete;
+
+    Player(const Player &&p) = delete;
+    Player& operator=(const Player &&p) = delete;
+
+    virtual ~Player();
+
 
 public: // name related stuff
     std::string name() const;
-    std::string salutation() const;
+    virtual std::string salutation() const;
 
 public: // health related stuff
     int health() const;
