@@ -8,44 +8,26 @@ int Player::alivePlayers = 0;
 int Player::createdPlayers = 0;
 
 
-/*Player::Player(): Player("Anonymous guard")
+Player::Player(): Player("Anonymous guard")
 {
     cout << "Default constructor called" << endl;
-}*/
+}
 
 
 Player::Player(string name):
     name_ { name }, health_ { 100 }
 {
     cout << name_ << " has been born!" << endl;
-    /*++createdPlayers;
-    ++alivePlayers;*/
-}
-
-
-/*Player::Player(const Player &p):
-    name_ { "Clone of " + p.name_ }, health_ { p.health_ }
-{
-    cout << name_ << " has been cloned!" << endl;
     ++createdPlayers;
     ++alivePlayers;
 }
 
-Player& Player::operator=(const Player &p)
-{
-    if (this == &p) return *this;
-    name_ = p.name_;
-    health_ = p.health_;
-    ++createdPlayers;
-    ++alivePlayers;
-    return *this;
-}
 
 Player::~Player()
 {
     setHealth(0);
     cout << name_ << " is leaving..." << endl;
-}*/
+}
 
 std::string Player::name() const
 {

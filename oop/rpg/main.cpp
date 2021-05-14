@@ -10,23 +10,19 @@ using namespace std;
 void game() {
     Player::printGameInfo(1);
 
-    vector<Player> players { Player("Anon"), Player("Emil") };
-
-    /*vector<shared_ptr<Player>> players;
+    vector<shared_ptr<Player>> players;
 
     players.push_back(make_shared<Player>("Emil"));
-    players.push_back(make_shared<Mage>("Cherryfuchs"));*/
+    players.push_back(make_shared<Mage>("Cherryfuchs"));
 
     for (const auto &player: players)
     {
-        player.printPlayerInfo();
+        player->printPlayerInfo();
     }
 
-
     // m.castMagic(); // TODO
-    //players[0].reset();
 
-    //Player::printGameInfo(2);
+    Player::printGameInfo(2);
 }
 
 int main() {
