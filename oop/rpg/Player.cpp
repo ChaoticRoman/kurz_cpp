@@ -77,7 +77,7 @@ void Player::printGameInfo()
 
 void Player::printGameInfo(int seq)
 {
-    cout << "\033[1;32m[" << seq << "]\033[0;0m" << " ";
+    cout << "\033[7;32m[" << seq << "]\033[0;0m" << " ";
     Player::printGameInfo();
 }
 
@@ -89,6 +89,6 @@ void Player::printPlayerInfo() const
 
 void Player::printPlayerInfo(int seq) const
 {
-    cout << "\033[1;32m[" << seq << "]\033[0;0m" << " ";
+    cout << "\033[7;32m[" << seq << "]\033[0;0m" << " ";
     Player::printPlayerInfo();
 }
