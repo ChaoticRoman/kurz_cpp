@@ -29,10 +29,11 @@ Player::~Player()
     cout << name_ << " is leaving..." << endl;
 }
 
+
 std::string Player::name() const
 {
-    return name_.empty() ? name_ : "Anonymous";
-};
+    return name_.empty() ? "Anonymous" : name_;
+}
 
 
 std::string Player::salutation() const
@@ -82,7 +83,7 @@ void Player::printGameInfo(int seq)
 void Player::printPlayerInfo() const
 {
     cout << salutation() << " has " << health()
-         << "HP." << endl;
+         << " HP." << endl;
 }
 
 void Player::printPlayerInfo(int seq) const
