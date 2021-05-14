@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include <string>
+#include <memory>
 
 class Player {
 
@@ -43,5 +44,19 @@ private:
     static int alivePlayers;
     static int createdPlayers;
 };
+
+
+template<class T>
+bool is(std::shared_ptr<Player> p)
+{
+    return static_cast<bool>(std::dynamic_pointer_cast<T>(p));
+}
+
+
+template<class T>
+std::shared_ptr<T> castTo(std::shared_ptr<Player> p)
+{
+    return std::dynamic_pointer_cast<T>(p);
+}
 
 #endif

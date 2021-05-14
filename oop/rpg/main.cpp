@@ -8,20 +8,6 @@
 using namespace std;
 
 
-template<class T>
-bool is(shared_ptr<Player> p)
-{
-    return static_cast<bool>(dynamic_pointer_cast<T>(p));
-}
-
-
-template<class T>
-shared_ptr<T> castTo(shared_ptr<Player> p)
-{
-    return dynamic_pointer_cast<T>(p);
-}
-
-
 void game() {
     //Player::printGameInfo(1);
 

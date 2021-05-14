@@ -15,9 +15,8 @@ Mage::~Mage() {
 
 void Mage::castMagic() {
     health_ *= 2;
-    cout << "****" << endl;
+    cout << "\033[5;31m[" << "****" << "]\033[0;0m" << endl;
 }
-
 
 std::string Mage::salutation() const {
     string result = !alive() ? "Dead " : "";
