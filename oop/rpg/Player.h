@@ -6,16 +6,15 @@
 class Player {
 
 public:
-    Player();
     Player(std::string name);
 
-    Player(const Player &p);
-    Player& operator=(const Player &p) = delete;
+    Player(const Player &p) = default;
+    Player& operator=(const Player &p) = default;
 
-    Player(const Player &&p) = delete;
-    Player& operator=(const Player &&p) = delete;
+    Player(Player &&p) = default;
+    Player& operator=(Player &&p) = default;
 
-    virtual ~Player();
+    virtual ~Player() = default;
 
 
 public: // name related stuff
